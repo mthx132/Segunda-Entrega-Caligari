@@ -1,0 +1,91 @@
+/* En proceso de formación */
+
+html {
+  font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#margenAlto {
+  background-color: rgb(2, 124, 194);
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0.1rem 0.1rem 1rem black;
+}
+
+/* #Margen-Plata {
+    background-color: rgb(1, 73, 114);
+    padding: 20px;
+    height: 30px;
+  margin-left: 650px;
+  margin-right: 650px;
+} */
+
+#txtmarcoAlto {
+  color: white;
+  display: flex;
+  margin-left: 13px;
+  margin-top: 30px;
+  font-size: 25px;
+}
+
+#txtInicio {
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-left: 13px;
+  margin-top: -42px;
+  font-size: 30px;
+}
+
+#txtCuadroPrincipal {
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+  text-align: center;
+  color: white;
+  margin-right: 100px;
+  width: 300px;
+  height: 300px;
+  background-color: hwb(208 38% 0%);
+}
+
+#txtCuadroPrincipal:hover {
+  box-shadow: 4px 4px 3px black;
+}
+
+#CuadroDeTransferencias{
+    font-size: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+    text-align: center;
+    color: white;
+    width: 400px;
+    height: 550px;
+    background-color: hwb(208 38% 0%);
+
+}
+
+#CuadroDeTransferencias:hover{
+
+box-shadow: 4px 4px 3px black;
+
+}
+
+#AccionesDelCuadroPrincipal{
+    color: white;
+    font-size: 20px;
+    text-align: start;
+    margin-left: 10px;
+    margin-top: -249px;
+}
+
