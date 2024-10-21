@@ -1,26 +1,47 @@
-//El Nombre sera utilizado para el Proyecto Final
-const Nombre = prompt("Ingrese su Nombre Aqui:");
+const nombre = prompt("Ingrese su Nombre Aqui:");
 const contraseña = prompt("Cual desea que sea su contraseña?:");
-const Saldo = "80000";
-alert("Usted posee un saldo de: $" + Saldo);
-const Transferencia = prompt("A quien le deseas Transferir?:");
+let variasTransferencias = "Si"
+let saldo = 80000;
 
-const cantidad = parseInt(prompt("Cuanto deseas Enviar?:"));
-if (cantidad <= Saldo) {
+while(variasTransferencias == "Si" ){
+
+  alert("Usted posee un saldo de: $" + saldo);
+
+const transferencia = prompt("A quien le deseas Transferir?:");
+let cantidad = parseInt(prompt("Cuanto deseas Enviar?:"));
+
+if (cantidad <= saldo) {
+
   if (validarProceso()) {
+    let informacionTotal = [];
+    informacionTotal.push({
+      nombre:nombre,
+      contraseña:contraseña,
+      saldo:saldo,
+      destinatario:transferencia,
+      cantidad:cantidad
+    });
+    saldo = saldo - cantidad;
+      console.log(informacionTotal)
     alert("Transferencia Exitosa");
     console.log("Transferencia Exitosa");
+    let horaExacta = "la transferencia fue realizada el " + new Date()
+    console.log (horaExacta)
+    variasTransferencias = prompt("Deseas realizar otra transferencia? (escribir ´Si´ o ´No´) ")
+
+    console.log(variasTransferencias)
   } else {
     alert("Transferencia Rechazada");
     console.log("Transferencia Rechazada");
+    break
   }
 } else {
   alert("No Posee el dinero suficiente");
 }
+
 function validarProceso() {
   let contraseñaIngresada;
   let intentos = 5;
-
   while (
     (contraseñaIngresada =
       prompt("Ingrese su Contraseña:") != contraseña && intentos != 1)
@@ -35,11 +56,12 @@ function validarProceso() {
       "en caso que los siguientes datos sean correctos escribe 'aceptar', de lo contrario escribe 'rechazar' "
     );
     const verificacion_de_datos = prompt(
-      "Transferencia a: " + Transferencia + " Enviaras: $" + cantidad
+      "Transferir a: " + transferencia + " " + "Cantidad: " + saldo 
     );
     return verificacion_de_datos == "aceptar";
   } else {
     alert("Superaste el limite de Intentos");
     return false;
   }
+}
 }
