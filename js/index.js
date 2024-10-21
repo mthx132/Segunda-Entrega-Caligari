@@ -2,7 +2,7 @@ const nombre = prompt("Ingrese su Nombre Aqui:");
 const contraseña = prompt("Cual desea que sea su contraseña?:");
 let variasTransferencias = "Si"
 let saldo = 80000;
-
+let informacionTotal = [];
 while(variasTransferencias == "Si" ){
 
   alert("Usted posee un saldo de: $" + saldo);
@@ -13,7 +13,6 @@ let cantidad = parseInt(prompt("Cuanto deseas Enviar?:"));
 if (cantidad <= saldo) {
 
   if (validarProceso()) {
-    let informacionTotal = [];
     informacionTotal.push({
       nombre:nombre,
       contraseña:contraseña,
@@ -56,7 +55,7 @@ function validarProceso() {
       "en caso que los siguientes datos sean correctos escribe 'aceptar', de lo contrario escribe 'rechazar' "
     );
     const verificacion_de_datos = prompt(
-      "Transferir a: " + transferencia + " " + "Cantidad: " + saldo 
+      "Transferir a: " + transferencia + " " + "Cantidad: " + cantidad
     );
     return verificacion_de_datos == "aceptar";
   } else {
